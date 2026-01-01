@@ -50,7 +50,7 @@ export default function Hero({ profile, featureCards }: { profile: Profile; feat
         I build{" "}
         <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-200 to-cyan-200 bg-clip-text text-transparent">fast</span>,
         <br className="hidden md:block" />
-        delightful software.
+        reliable software.
       </motion.h1>
 
 

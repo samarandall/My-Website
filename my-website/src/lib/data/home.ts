@@ -7,17 +7,17 @@ export default function makeDefaultHomeData(overrides?: Partial<Profile>) {
   const profile: Profile = {
     name: "Sam",
     role: "Builder • Unreal C++ • Web",
-    location: "Chicago, IL",
+    location: "Texas, USA",
     blurb:
       "I ship polished experiences—from game systems to modern web apps. I like clean architecture, fast feedback loops, and a little bit of ✨.",
     highlights: ["Unreal Engine", "C++", "Next.js", "TypeScript", "Systems", "UI/UX"],
     ...overrides,
     links: {
       ...(overrides?.links ?? {}),
-      email: overrides?.links?.email ?? "mailto:sam@example.com",
-      github: overrides?.links?.github ?? "https://github.com/",
-      linkedin: overrides?.links?.linkedin ?? "https://www.linkedin.com/",
-      resume: overrides?.links?.resume ?? "/resume",
+      email: overrides?.links?.email ?? "mailto:samarandall@proton.me",
+      github: overrides?.links?.github ?? "https://github.com/samarandall",
+      linkedin: overrides?.links?.linkedin ?? "https://www.linkedin.com/in/sam-randall",
+      resume: overrides?.links?.resume ?? "/Resume.pdf",
       projects: overrides?.links?.projects ?? "/projects",
       blog: overrides?.links?.blog ?? "/blog",
     },
