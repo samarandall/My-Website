@@ -16,7 +16,7 @@ import {
 import { FeatureCardModel, Profile } from "@/types/types";
 import Pill from "@/components/ui/pill";
 import Separator from "@/components/ui/seperator";
-import FeatureCards from "./feature-cards";
+import FeatureCards from "@/components/common/feature-cards";
 
 export default function Hero({ profile, featureCards }: { profile: Profile; featureCards: FeatureCardModel[] }) {
   const links = profile.links;

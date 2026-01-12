@@ -8,7 +8,7 @@ export type ProfileLinks = {
   linkedin: string;
   resume: string;
   projects: string;
-  blog: string;
+  experience: string;
 };
 
 export type Profile = {
@@ -32,4 +32,24 @@ export type ProjectCardModel = {
   tag: string;
   desc: string;
   href: string;
+};
+
+
+export type Experience = {
+  role: string;
+  company: string;
+  location: string;
+  dates: string;
+  bullets: string[];
+  tags: string[];
+  icon: React.ReactNode;
+  emphasis?: "primary" | "secondary";
+};
+
+export type Education = {
+  school: string;
+  degree: string;
+  location: string;
+  date: string;
+  details?: string[];
 };

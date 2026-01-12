@@ -23,7 +23,7 @@ export default function getFeatureData() {
       desc: "Interfaces that feel crisp—motion, typography, and spacing done right.",
       cta: {
         label: "Read the blog",
-        href: profile.links.blog
+        href: profile.links.experience
       },
     },
     {

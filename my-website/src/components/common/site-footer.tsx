@@ -11,8 +11,8 @@ export default function SiteFooter({ profile }: { profile: Profile }) {
         © {new Date().getFullYear()} {profile.name}. Built with Next.js.
       </div>
       <div className="flex items-center gap-4">
-        <SmartLink className="hover:text-white" href={links.blog}>
-          Blog
+        <SmartLink className="hover:text-white" href={links.experience}>
+          Experience
         </SmartLink>
         <SmartLink className="hover:text-white" href={links.projects}>
           Projects

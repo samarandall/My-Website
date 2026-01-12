@@ -8,8 +8,8 @@ export default function getProfileData(
     role: "Software Engineer",
     location: "Texas, USA",
     blurb:
-      "I like engineering polished experiences and clean architecture solutions.",
-    highlights: ["Unreal Engine", "C++", "Next.js", "TypeScript", "Systems", "UI/UX"],
+      "I like engineering polished experiences with clean architecture.",
+    highlights: ["Python", "C++", "TypeScript", "Next Js", "Cloud Services", "Systems Design"],
     ...overrides,
     links: {
       ...(overrides?.links ?? {}),
@@ -18,7 +18,7 @@ export default function getProfileData(
       linkedin: overrides?.links?.linkedin ?? "https://www.linkedin.com/in/sam-randall",
       resume: overrides?.links?.resume ?? "/Resume.pdf",
       projects: overrides?.links?.projects ?? "/projects",
-      blog: overrides?.links?.blog ?? "/blog",
+      experience: overrides?.links?.experience ?? "/experience",
     },
   };
 

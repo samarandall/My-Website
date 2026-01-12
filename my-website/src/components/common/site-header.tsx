@@ -28,8 +28,8 @@ export default function SiteHeader({ profile }: { profile: Profile }) {
         <Button href={links.projects} variant="ghost">
           Projects
         </Button>
-        <Button href={links.blog} variant="ghost">
-          Blog
+        <Button href={links.experience} variant="ghost">
+          Experience
         </Button>
         <Button href={links.resume} variant="ghost">
           Resume
