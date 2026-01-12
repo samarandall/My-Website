@@ -11,10 +11,10 @@ export default function getFeatureData() {
     {
       icon: Code2,
       title: "Engineering",
-      desc: "Gameplay systems, tooling, and performance-minded code that scales.",
+      desc: "Full stack web development with a focus on performance and clean UI",
       cta: {
-        label: "See projects",
-        href: profile.links.projects
+        label: "See Experience",
+        href: profile.links.experience
       },
     },
     {
@@ -22,8 +22,8 @@ export default function getFeatureData() {
       title: "Design taste",
       desc: "Interfaces that feel crisp—motion, typography, and spacing done right.",
       cta: {
-        label: "Read the blog",
-        href: profile.links.experience
+        label: "View Projects",
+        href: profile.links.projects
       },
     },
     {

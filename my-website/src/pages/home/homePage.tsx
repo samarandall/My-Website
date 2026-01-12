@@ -4,7 +4,7 @@ import Hero from "@/components/sections/home/hero";
 import FeaturedWork from "@/components/sections/home/featured-work";
 import CallToAction from "@/components/sections/home/cta";
 import getProfileData from "@/lib/data/profile";
-import getProjectData from "@/lib/data/projects";
+import getProjectData from "@/lib/data/featured-projects";
 import getFeatureData from "@/lib/data/feature-card";
 
 export default function HomePage() {

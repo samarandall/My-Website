@@ -4,7 +4,7 @@ export default function getProfileData(
   overrides?: Partial<Profile>
 ): Profile {
   const profile: Profile = {
-    name: "Sam",
+    name: "Sam Randall",
     role: "Software Engineer",
     location: "Texas, USA",
     blurb:

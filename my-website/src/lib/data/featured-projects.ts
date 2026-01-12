@@ -8,15 +8,15 @@ export default function getProjectData() {
 
   const projects: ProjectCardModel[] = [
     {
-      name: "MyProject (UE)",
-      tag: "Unreal C++",
-      desc: "A starter project with clean modules, clangd tooling, and a focused gameplay loop.",
+      name: "Personal Site",
+      tag: "Next.js",
+      desc: "A fast, tasteful website",
       href: profile.links.projects,
     },
     {
-      name: "Personal Site",
+      name: "Veridical Manufacturing",
       tag: "Next.js",
-      desc: "A fast, tasteful home on the internet—content, projects, and experiments.",
+      desc: "Production website deployed on AWS using stripe payments",
       href: profile.links.projects,
     },
   ];

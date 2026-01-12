@@ -11,25 +11,20 @@ export default function SiteHeader({ profile }: { profile: Profile }) {
   return (
     <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-6">
       <SmartLink href="/" className="group inline-flex items-center gap-2">
-        <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-white/5 shadow-sm backdrop-blur">
-          <span className="text-sm font-semibold">{(profile.name || "?").slice(0, 1).toUpperCase()}</span>
-        </span>
         <div className="leading-tight">
           <div className="text-sm font-semibold tracking-tight">{profile.name}</div>
           <div className="text-xs text-white/60">{profile.role}</div>
         </div>
-        <span className="ml-2 hidden rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-white/60 group-hover:text-white/80 md:inline">
-          open to collabs
-        </span>
+
       </SmartLink>
 
 
       <nav className="hidden items-center gap-2 md:flex">
-        <Button href={links.projects} variant="ghost">
-          Projects
-        </Button>
         <Button href={links.experience} variant="ghost">
           Experience
+        </Button>
+        <Button href={links.projects} variant="ghost">
+          Projects
         </Button>
         <Button href={links.resume} variant="ghost">
           Resume

@@ -22,7 +22,7 @@ export default function CallToAction({ emailHref, projectsHref }: { emailHref: s
         <div className="relative">
           <h3 className="text-xl font-semibold tracking-tight md:text-2xl">Want to build something together?</h3>
           <p className="mt-2 max-w-2xl text-sm text-white/70 md:text-base">
-            If you’re working on a game, a tool, or a web product and want a thoughtful collaborator, I’m down.
+            If my skills are what you are looking for feel free to reach out.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button href={emailHref} variant="primary" size="lg" className="rounded-2xl">

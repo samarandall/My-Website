@@ -53,3 +53,25 @@ export type Education = {
   date: string;
   details?: string[];
 };
+
+export type ProjectLink = {
+  label: string;
+  href: string;
+  icon?: React.ReactNode;
+};
+
+export type Project = {
+  slug: string;
+  name: string;
+  blurb: string;
+  description: string;
+  year?: string;
+  featured?: boolean;
+  role?: string;
+  stack: string[];
+  tags: string[];
+  metrics?: Array<{ label: string; value: string }>;
+  links?: ProjectLink[];
+};
+
+
