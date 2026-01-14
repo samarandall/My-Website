@@ -2,11 +2,26 @@
 import { motion } from "framer-motion";
 import Separator from "@/components/ui/seperator";
 import { motionItem } from "@/lib/motion/variants";
+import Pill from "@/components/ui/pill";
+import {
+  Badge,
+  Sparkles
+} from "lucide-react";
 
 
 export default function Title() {
   return (
     <>
+      <motion.div variants={motionItem} className="flex flex-wrap items-center gap-2">
+        <Pill>
+          <Sparkles className="h-3.5 w-3.5 text-white/70" />
+          <span>Experience</span>
+        </Pill>
+        <Pill>
+          <Badge className="h-3.5 w-3.5 text-white/70" />
+          <span>Full-Stack Development</span>
+        </Pill>
+      </motion.div>
       <motion.h1
         variants={motionItem}
         className="mt-6 text-balance text-3xl font-semibold tracking-tight md:text-5xl"
