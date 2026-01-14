@@ -35,9 +35,7 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
         <div
           className={classNames(
             "absolute right-[-120px] top-[-120px] h-[260px] w-[260px] rounded-full blur-3xl",
-            exp.emphasis === "primary"
-              ? "bg-gradient-to-br from-indigo-400/20 to-cyan-400/20"
-              : "bg-gradient-to-br from-fuchsia-400/15 to-amber-300/10"
+            "bg-gradient-to-br from-fuchsia-400/15 to-amber-300/10"
           )}
         />
         <div className="absolute bottom-[-140px] left-[-140px] h-[320px] w-[320px] rounded-full bg-gradient-to-br from-indigo-400/10 to-fuchsia-300/10 blur-3xl" />
