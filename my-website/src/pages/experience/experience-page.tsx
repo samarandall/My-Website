@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { motionContainer, motionItem } from "@/lib/motion/variants";
-import Separator from "@/components/ui/seperator";
+import { motionContainer } from "@/lib/motion/variants";
 import Timeline from "@/components/sections/experience/timeline";
 import Footer from "@/components/sections/experience/footer";
+import Education from "@/components/sections/experience/education";
+import Title from "@/components/sections/experience/title";
 
 
 export default function ExperiencePage() {
@@ -22,37 +23,9 @@ export default function ExperiencePage() {
         <div className="absolute bottom-[-140px] left-[-140px] h-[320px] w-[320px] rounded-full bg-gradient-to-br from-fuchsia-400/20 to-amber-300/10 blur-3xl" />
       </div>
 
-
-      <motion.h1
-        variants={motionItem}
-        className="mt-6 text-balance text-3xl font-semibold tracking-tight md:text-5xl"
-      >
-        Shipping software from
-        <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-200 to-cyan-200 bg-clip-text text-transparent">
-          {" "}prototype → production
-        </span>
-        .
-      </motion.h1>
-
-      <motion.p variants={motionItem} className="mt-4 max-w-3xl text-pretty text-base text-white/70 md:text-lg">
-        A timeline of roles and the kinds of systems I&apos;ve built: enterprise web apps, AWS deployments, payments,
-        automation tooling, and iOS + Bluetooth interfaces.
-      </motion.p>
-
-      <motion.div variants={motionItem} className="mt-8">
-        <Separator />
-      </motion.div>
-
-      {/* Experience timeline */}
+      <Title />
       <Timeline />
-
-
-      <motion.div variants={motionItem} className="mt-10">
-        <Separator />
-      </motion.div>
-
-      {/* Education + Skills */}
-
+      <Education />
 
       <Footer />
 

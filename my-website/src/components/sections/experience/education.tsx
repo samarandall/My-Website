@@ -11,7 +11,6 @@ import getEducation from "@/lib/data/education";
 import getSkills from "@/lib/data/skills";
 
 
-
 export default function Education() {
   const education = getEducation();
   const skills = getSkills();

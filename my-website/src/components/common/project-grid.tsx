@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Project, ProjectCardModel } from "@/types/types";
+import { Project } from "@/types/types";
 import { motionItem } from "@/lib/motion/variants";
 import Card from "@/components/ui/card";
 import CardContent from "@/components/ui/card-content";
@@ -28,11 +28,11 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                   <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
-              {p.links ? p.links.forEach((ele) => {
-                <Button href={ele?.href ?? ""} variant="ghost" className="mt-4 px-0">
+              {p?.links?.forEach((ele) => {
+                <Button href={ele.href ?? ''} variant="ghost" className="mt-4 px-0">
                   Open
                 </Button>
-              }) : ""}
+              }) ?? null}
             </CardContent>
           </Card>
         </motion.div>

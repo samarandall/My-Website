@@ -21,6 +21,5 @@ export default function Timeline() {
         <Separator />
       </motion.div>
     </>
-
   );
 }
