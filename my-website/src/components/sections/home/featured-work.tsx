@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ProjectCardModel } from "@/types/types";
+import { Project } from "@/types/types";
 import { motionItem, motionContainer } from "@/lib/motion/variants";
 import Button from "@/components/ui/button"
 import { ProjectGrid } from "@/components/common/project-grid";
 
-export default function FeaturedWork({ projects, projectsHref }: { projectsHref: string; projects: ProjectCardModel[] }) {
+export default function FeaturedWork({ projects, projectsHref }: { projects: Project[]; projectsHref: string; }) {
   return (
     <motion.section
       variants={motionContainer}
