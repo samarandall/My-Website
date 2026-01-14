@@ -9,12 +9,12 @@ export default function getProjects(): Project[] {
   const projects: Project[] = [
     {
       slug: "veridical-web",
-      name: "Veridical Web",
+      name: "Veridical Website",
       blurb: "Next.js app deployed on AWS with Stripe payments.",
       description:
         "A production web application with a reusable UI system, payments integration, and performance-minded data flows.",
       year: "2025",
-      featured: true,
+      featured: false,
       role: "Frontend + Full-stack",
       stack: ["Next.js", "TypeScript", "React", "Tailwind", "AWS", "Stripe"],
       tags: ["UI", "Payments", "AWS"],
@@ -28,12 +28,24 @@ export default function getProjects(): Project[] {
       ],
     },
     {
+      slug: "ai-person-detection",
+      name: "Person Detection AI Model",
+      blurb: "A web app using Django, Vue js, and Ultralitics YOLO AI model",
+      year: "2025",
+      description: "A complete web app utilizing Django for the backend web server and video stream processor, Vue js for the frontend, and Ultralitics YOLO model for person detection.",
+      featured: true,
+      role: "AI and Full-Stack Engineer",
+      stack: ["Vue.js", "TypeScript", "React", "Python", "Django", "Ultralitics YOLO"],
+      tags: ["AI Model", "Full-Stack"]
+    },
+    {
       slug: "my-website",
       name: "My Website",
       blurb: "Next Js app deployed on AWS",
       description:
         "A lightweight automation that aggregates data from multiple locations and produces consistent output for stakeholders.",
       year: "2025",
+      featured: true,
       role: "Developer",
       stack: ["Python"],
       tags: ["Automation", "Reporting"],
@@ -50,6 +62,7 @@ export default function getProjects(): Project[] {
       stack: ["Python"],
       tags: ["Automation", "Reporting"],
       links: [{ label: "Case study", href: "#", icon: <ArrowUpRight className="h-4 w-4" /> }],
+      featured: false,
     },
   ];
 

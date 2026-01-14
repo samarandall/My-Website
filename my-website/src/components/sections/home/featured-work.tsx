@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Project } from "@/types/types";
 import { motionItem, motionContainer } from "@/lib/motion/variants";
 import Button from "@/components/ui/button"
-import { ProjectGrid } from "@/components/common/project-grid";
+import FeaturedProjects from "@/components/common/featured-projects";
 
 export default function FeaturedWork({ projects, projectsHref }: { projects: Project[]; projectsHref: string; }) {
   return (
@@ -28,7 +28,7 @@ export default function FeaturedWork({ projects, projectsHref }: { projects: Pro
       </motion.div>
 
 
-      <ProjectGrid projects={projects} />
+      <FeaturedProjects projects={projects} />
     </motion.section>
   );
 }
