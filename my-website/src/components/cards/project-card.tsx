@@ -34,11 +34,11 @@ export default function ProjectCard({ project }: { project: Project }) {
         project.featured && "ring-1 ring-white/10"
       )}
     >
-      {/* glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+      {/* this glow grid was too much       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-[-120px] top-[-120px] h-[260px] w-[260px] rounded-full bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 blur-3xl" />
         <div className="absolute bottom-[-140px] left-[-140px] h-[320px] w-[320px] rounded-full bg-gradient-to-br from-fuchsia-400/20 to-amber-300/10 blur-3xl" />
       </div>
+      */}
 
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>

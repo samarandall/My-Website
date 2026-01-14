@@ -28,8 +28,8 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                   <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
-              {p?.links?.forEach((ele) => {
-                <Button href={ele.href ?? ''} variant="ghost" className="mt-4 px-0">
+              {p.links?.forEach((ele) => {
+                <Button href={ele?.href ?? ''} variant="ghost" className="mt-4 px-0">
                   Open
                 </Button>
               }) ?? null}
