@@ -23,8 +23,7 @@ export default function getProjects(): Project[] {
         { label: "Delivery", value: "Production" },
       ],
       links: [
-        { label: "Live", href: "www.veridicalmanufacturing.com", icon: <ExternalLink className="h-4 w-4" /> },
-        { label: "Repo", href: "#", icon: <Github className="h-4 w-4" /> },
+        { label: "Live", href: "https://www.veridicalmanufacturing.com", icon: <ExternalLink className="h-4 w-4" /> }
       ],
     },
     {
@@ -36,7 +35,10 @@ export default function getProjects(): Project[] {
       featured: true,
       role: "AI and Full-Stack Engineer",
       stack: ["Vue.js", "TypeScript", "React", "Python", "Django", "Ultralitics YOLO"],
-      tags: ["AI Model", "Full-Stack"]
+      tags: ["AI Model", "Full-Stack"],
+      links: [
+        { label: "Repo", href: "https://github.com/samarandall/lighthouse-person-detection", icon: <Github className="h-4 w-4" /> }
+      ],
     },
     {
       slug: "my-website",
@@ -47,9 +49,11 @@ export default function getProjects(): Project[] {
       year: "2025",
       featured: true,
       role: "Developer",
-      stack: ["Python"],
+      stack: ["TypeScript", "Node.js", "Next.js/React", "AWS"],
       tags: ["Automation", "Reporting"],
-      links: [{ label: "Case study", href: "#", icon: <ArrowUpRight className="h-4 w-4" /> }],
+      links: [
+        { label: "Repo", href: "https://github.com/samarandall/myWebsite/", icon: <Github className="h-4 w-4" /> }
+      ],
     },
     {
       slug: "hospital-reports",
@@ -61,7 +65,6 @@ export default function getProjects(): Project[] {
       role: "Developer",
       stack: ["Python"],
       tags: ["Automation", "Reporting"],
-      links: [{ label: "Case study", href: "#", icon: <ArrowUpRight className="h-4 w-4" /> }],
       featured: false,
     },
   ];

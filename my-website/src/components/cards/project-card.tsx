@@ -34,13 +34,14 @@ export default function ProjectCard({ project }: { project: Project }) {
         project.featured && "ring-1 ring-white/10"
       )}
     >
-      {/* this glow grid was too much       <div className="pointer-events-none absolute inset-0 -z-10">
+      {/* this glow grid was too much       
+      <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-[-120px] top-[-120px] h-[260px] w-[260px] rounded-full bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 blur-3xl" />
         <div className="absolute bottom-[-140px] left-[-140px] h-[320px] w-[320px] rounded-full bg-gradient-to-br from-fuchsia-400/20 to-amber-300/10 blur-3xl" />
       </div>
       */}
 
-      <div className="flex flex-wrap items-start justify-between gap-4">
+      <div className="flex flex-col items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
             <div className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-white/80">
@@ -73,7 +74,6 @@ export default function ProjectCard({ project }: { project: Project }) {
             ) : null}
           </div>
         </div>
-
         {project.links?.length ? (
           <div className="flex flex-wrap items-center gap-2">
             {project.links.map((l) => (
@@ -90,6 +90,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
         ) : null}
+
       </div>
 
       <p className="mt-5 max-w-3xl text-pretty text-sm text-white/75 md:text-[15px]">{project.description}</p>

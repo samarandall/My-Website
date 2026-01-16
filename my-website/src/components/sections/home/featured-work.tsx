@@ -18,7 +18,7 @@ export default function FeaturedWork({ projects, projectsHref }: { projects: Pro
       <motion.div variants={motionItem} className="flex items-end justify-between gap-4">
         <div>
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Featured work</h2>
-          <p className="mt-2 max-w-2xl text-sm text-white/70">A couple things I’m proud of—plus a path to the rest.</p>
+          <p className="mt-2 max-w-2xl text-sm text-white/70">A couple things I’m proud of.</p>
         </div>
         <div className="hidden md:block">
           <Button href={projectsHref} variant="outline" className="rounded-2xl">

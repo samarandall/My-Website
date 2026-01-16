@@ -39,18 +39,6 @@ export default function getExperienceData(): Experience[] {
       emphasis: "primary",
     },
     {
-      role: "Software Engineer (Freelance)",
-      company: "Monitoring & Report Generator",
-      location: "Remote",
-      dates: "May 2025 – Jun 2025",
-      bullets: [
-        "Built a Python automation tool to aggregate multi-location hospital temperature data and generate scheduled reports, eliminating manual compilation and saving hours weekly.",
-      ],
-      tags: ["Python", "Automation", "Reporting"],
-      icon: <Wrench className="h-4 w-4" />,
-      emphasis: "secondary",
-    },
-    {
       role: "Software Engineer",
       company: "Paycom",
       location: "Dallas, TX",

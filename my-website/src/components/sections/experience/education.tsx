@@ -77,7 +77,7 @@ export default function Education() {
 
         <div className="mt-6 rounded-3xl border border-white/10 bg-white/[0.03] p-4">
           <p className="text-sm text-white/70">
-            My default mode: clean UI, reliable backend, careful error handling, and performance-minded data flows.
+            Clean UI, reliable backend, careful error handling, and performance-minded data flows.
           </p>
         </div>
       </motion.div>

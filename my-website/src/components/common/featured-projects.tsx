@@ -30,9 +30,12 @@ export default function FeaturedProjects({ projects }: { projects: Project[] }) 
                     <p className="mt-2 text-sm text-white/70">{p.description}</p>
                   </div>
 
-                  <div className="grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 opacity-70 transition group-hover:opacity-100">
-                    <ArrowRight className="h-4 w-4" />
-                  </div>
+                  <Button href="/projects">                  
+                    <div className="grid h-10 w-10 place-items-center rounded-2xl border border-white/10 bg-white/5 opacity-70 transition group-hover:opacity-100">
+                      <ArrowRight  className="h-4 w-4" />
+                    </div>
+                  </Button>
+
                 </div>
 
                 {p.links?.length ? (
