@@ -1,0 +1,36 @@
+npm run dev
+
+http://localhost:3000
+
+build and push (local): 
+docker build -t my-website .
+docker tag my-website:latest <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website:latest
+aws ecr get-login-password --region us-east-1 | \
+  docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/veridical-manufacturing
+docker push <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website:latest
+
+Run Docker container:
+ssh -i ~/.ssh/my-website-key-pair.pem ec2-user@ec2-23-22-150-9.compute-1.amazonaws.com
+aws ecr get-login-password --region us-east-1 | \
+  docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website
+docker-compose pull 
+docker-compose down --remove-orphans
+docker-compose up -d
+
+stop docker container:
+docker stop my-website
+docker rm my-website
+
+
+Forward webhooks to your local server:
+
+1) start port 
+ stripe listen --forward-to http://localhost:3000/api/stripe-webhook
+
+2) copy webhook seceret to .env
+
+3) Trigger test events
+
+stripe trigger payment_intent.succeeded
+stripe trigger checkout.session.completed
+stripe trigger invoice.paid
