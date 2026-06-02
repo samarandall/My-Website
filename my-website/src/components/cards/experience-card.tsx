@@ -48,7 +48,7 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
               {exp.icon}
             </div>
             <div>
-              <h3 className="text-lg font-semibold tracking-tight">{exp.role}</h3>
+              <h2 className="text-lg font-semibold tracking-tight">{exp.role}</h2>
               <p className="text-sm text-white/70">{exp.company}</p>
             </div>
           </div>
@@ -88,8 +88,12 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
         </div>
       </div>
 
-      {/* subtle index marker */}
-      <div className="pointer-events-none absolute right-5 top-5 hidden rounded-2xl border border-white/10 bg-white/[0.03] px-2 py-1 text-xs text-white/40 md:block">
+      {/* subtle index marker — decorative ordinal, hidden from AT (also avoids the
+          low-contrast white/40 text being flagged as unreadable body text) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-5 top-5 hidden rounded-2xl border border-white/10 bg-white/[0.03] px-2 py-1 text-xs text-white/40 md:block"
+      >
         {String(index + 1).padStart(2, "0")}
       </div>
     </motion.div>

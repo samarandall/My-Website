@@ -22,7 +22,7 @@ export default function Button({
   onClick?: () => void;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-2 font-medium transition focus:outline-none focus:ring-2 focus:ring-white/20 disabled:opacity-50";
+    "inline-flex items-center justify-center gap-2 font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 disabled:opacity-50";
 
 
   const sizes: Record<typeof size, string> = {

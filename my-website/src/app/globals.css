@@ -120,10 +120,18 @@
 }
 
 @layer base {
+  /* The site is permanently dark. Tell the browser so native UI (scrollbars,
+     the Resume PDF viewer chrome, form autofill, mobile overscroll) renders
+     dark instead of flashing white. */
+  html {
+    color-scheme: dark;
+    background-color: #09090b;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    background-color: #09090b;
   }
 }

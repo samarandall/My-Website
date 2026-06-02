@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Sam Randall",
-    title: "Sam Randall — Software Engineer",
+    // No `title` here: Next falls back to each route's resolved <title>, so
+    // shared links to /projects and /experience get page-specific OG titles.
     description:
       "Portfolio of projects and experience from software engineer Sam Randall.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sam Randall — Software Engineer",
     description:
       "Portfolio of projects and experience from software engineer Sam Randall.",
   },
@@ -56,6 +56,20 @@ export const viewport: Viewport = {
   themeColor: "#09090b",
 };
 
+// schema.org Person — helps search engines build a knowledge-graph entity for Sam.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sam Randall",
+  jobTitle: "Software Engineer",
+  url: siteUrl,
+  image: `${siteUrl}/opengraph-image`,
+  sameAs: [
+    "https://github.com/samarandall",
+    "https://www.linkedin.com/in/sam-randall",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,10 +81,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Without JS, framer-motion never runs its entrance animation, so the
-            content would stay at its initial opacity:0. Force it visible. */}
+            content would stay at its initial hidden state (opacity:0, blurred,
+            translated down 14px). Force it to its final resting state. */}
         <noscript>
-          <style>{`*{opacity:1!important;filter:none!important}`}</style>
+          <style>{`*{opacity:1!important;filter:none!important;transform:none!important}`}</style>
         </noscript>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <PageWrapper>
           {children}
         </PageWrapper>

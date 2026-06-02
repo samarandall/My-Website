@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
-  Filter,
   Github,
   Sparkles,
+  Zap,
 } from "lucide-react";
 
 import { motionItem } from "@/lib/motion/variants";
@@ -33,7 +33,7 @@ export default function Header({
           <span>{title}</span>
         </Pill>
         <Pill>
-          <Filter className="h-3.5 w-3.5 text-white/70" />
+          <Zap className="h-3.5 w-3.5 text-white/70" />
           <span>UI · Performance · Shipping</span>
         </Pill>
       </div>

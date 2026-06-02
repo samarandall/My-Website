@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               <Layers className="h-4 w-4" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold tracking-tight">{project.name}</h3>
+              <h2 className="text-lg font-semibold tracking-tight">{project.name}</h2>
               <p className="text-sm text-white/70">{project.blurb}</p>
             </div>
           </div>

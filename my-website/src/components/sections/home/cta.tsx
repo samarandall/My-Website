@@ -20,9 +20,9 @@ export default function CallToAction({ emailHref, projectsHref }: { emailHref: s
       >
         <div className="absolute right-[-140px] top-1/2 h-[340px] w-[340px] -translate-y-1/2 rounded-full bg-gradient-to-br from-cyan-400/15 via-indigo-400/10 to-fuchsia-400/15 blur-3xl" />
         <div className="relative">
-          <h3 className="text-xl font-semibold tracking-tight md:text-2xl">Want to build something together?</h3>
+          <h2 className="text-xl font-semibold tracking-tight md:text-2xl">Want to build something together?</h2>
           <p className="mt-2 max-w-2xl text-sm text-white/70 md:text-base">
-            If my skills are what you are looking for feel free to reach out.
+            If my skills are what you&rsquo;re looking for, feel free to reach out.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button href={emailHref} variant="primary" size="lg" className="rounded-2xl">

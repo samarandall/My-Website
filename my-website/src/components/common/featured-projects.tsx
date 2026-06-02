@@ -21,9 +21,9 @@ export default function FeaturedProjects({ projects }: { projects: Project[] }) 
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
-                      <div className="text-base font-semibold tracking-tight">
+                      <h3 className="text-base font-semibold tracking-tight">
                         {p.name}
-                      </div>
+                      </h3>
                       {p.tags.map((t) => (
                         <Badge key={t}>{t}</Badge>
                       ))}

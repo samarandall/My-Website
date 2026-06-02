@@ -1,3 +1,5 @@
+"use client";
+
 import Separator from "@/components/ui/separator";
 import { motion } from "framer-motion";
 import ExperienceCard from "@/components/cards/experience-card";

@@ -139,13 +139,6 @@ export default function getProjects(): Project[] {
       stack: ["Next.js", "TypeScript", "Tailwind", "Docker", "AWS", "Caddy"],
       tags: ["Next.js", "Docker"],
       featured: false,
-      links: [
-        {
-          label: "Repo",
-          href: "https://github.com/samarandall/myWebsite/",
-          icon: <Github className="h-4 w-4" />,
-        },
-      ],
     },
   ];
 

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { motionContainer, } from "@/lib/motion/variants";
 import Header from "@/components/sections/projects/header";
 import Projects from "@/components/sections/projects/projects";
-import Controls from "@/components/sections/projects/controls";
 import Footer from "@/components/sections/projects/footer";
 
 
@@ -22,7 +21,6 @@ export default function ProjectsPage() {
       </div>
 
       <Header />
-      <Controls />
       <Projects />
       <Footer />
     </motion.section>
