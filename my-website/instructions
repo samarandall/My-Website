@@ -5,6 +5,18 @@ npm run build        # production build
 npm run lint
 
 
+Automated deploy (recommended)
+------------------------------
+One command does build -> push (ECR) -> upload compose/Caddyfile -> pull + restart on EC2:
+
+cp deploy/deploy.env.example deploy/deploy.env   # fill in server + ECR details (gitignored)
+./deploy/deploy.sh                               # deploy the current committed git SHA
+./deploy/deploy.sh --no-build --tag <old-sha>    # roll back to a previous build
+./deploy/deploy.sh --help                        # all options
+
+The manual steps below are the same flow, broken out for reference / one-offs.
+
+
 Build & push image to ECR (from this directory)
 ------------------------------------------------
 ECR=<your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website

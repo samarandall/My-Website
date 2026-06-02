@@ -27,3 +27,4 @@ Dockerfile
 .dockerignore
 docker-compose.yml
 Caddyfile
+deploy/

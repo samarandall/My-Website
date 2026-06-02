@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# deploy secrets (server host + key path); the .example template IS committed
+/deploy/deploy.env
+
 # vercel
 .vercel
 
