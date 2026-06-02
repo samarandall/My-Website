@@ -20,11 +20,13 @@ export default function FeaturedProjects({ projects }: { projects: Project[] }) 
               <CardContent>
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                       <div className="text-base font-semibold tracking-tight">
                         {p.name}
                       </div>
-                      <Badge>{p.tags.map(e => `${e} `)}</Badge>
+                      {p.tags.map((t) => (
+                        <Badge key={t}>{t}</Badge>
+                      ))}
                     </div>
 
                     <p className="mt-2 text-sm text-white/70">{p.description}</p>

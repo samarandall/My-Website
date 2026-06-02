@@ -8,7 +8,7 @@ import {
 import { motionItem } from "@/lib/motion/variants";
 import Button from "@/components/ui/button";
 import Pill from "@/components/ui/pill";
-import Separator from "@/components/ui/seperator";
+import Separator from "@/components/ui/separator";
 import getProfileData from "@/lib/data/profile";
 
 

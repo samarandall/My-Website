@@ -1,4 +1,4 @@
-import Separator from "@/components/ui/seperator";
+import Separator from "@/components/ui/separator";
 import { motion } from "framer-motion";
 import ExperienceCard from "@/components/cards/experience-card";
 import { motionItem } from "@/lib/motion/variants";

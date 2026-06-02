@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Button from "@/components/ui/button";
 import {
   ArrowRight,
-  Badge,
   FileText,
   MapPin,
   Github,
@@ -15,7 +14,8 @@ import {
 } from "lucide-react";
 import { FeatureCardModel, Profile } from "@/types/types";
 import Pill from "@/components/ui/pill";
-import Separator from "@/components/ui/seperator";
+import Badge from "@/components/ui/badge";
+import Separator from "@/components/ui/separator";
 import FeatureCards from "@/components/common/feature-cards";
 
 export default function Hero({ profile, featureCards }: { profile: Profile; featureCards: FeatureCardModel[] }) {

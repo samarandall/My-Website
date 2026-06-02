@@ -1,36 +1,49 @@
-npm run dev
+Local development
+-----------------
+npm run dev          # http://localhost:3000
+npm run build        # production build
+npm run lint
 
-http://localhost:3000
 
-build and push (local): 
-docker build -t my-website .
-docker tag my-website:latest <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website:latest
+Build & push image to ECR (from this directory)
+------------------------------------------------
+ECR=<your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website
+TAG=$(git rev-parse --short HEAD)        # immutable, rollback-able tag
+
+docker build -t $ECR:$TAG -t $ECR:latest .
+
 aws ecr get-login-password --region us-east-1 | \
-  docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/veridical-manufacturing
-docker push <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website:latest
+  docker login --username AWS --password-stdin $ECR
 
-Run Docker container:
-ssh -i ~/.ssh/my-website-key-pair.pem ec2-user@ec2-23-22-150-9.compute-1.amazonaws.com
+docker push $ECR:$TAG
+docker push $ECR:latest
+
+# (One-time) Enable ECR scan-on-push so every pushed image is scanned for CVEs:
+#   aws ecr put-image-scanning-configuration --repository-name my-website \
+#     --image-scanning-configuration scanOnPush=true --region us-east-1
+
+
+Deploy on the server (EC2)
+--------------------------
+# NOTE: this repo is public — the real EC2 host and SSH key path are intentionally
+# omitted here. Keep them in a local, untracked note (e.g. ~/.config/veridical-deploy).
+ssh -i ~/.ssh/<your-key>.pem ec2-user@<your-ec2-host>
+
 aws ecr get-login-password --region us-east-1 | \
-  docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website
-docker-compose pull 
-docker-compose down --remove-orphans
-docker-compose up -d
+  docker login --username AWS --password-stdin \
+  <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website
 
-stop docker container:
-docker stop my-website
-docker rm my-website
+# Deploy a specific build (recommended). Recreates only the app service; Caddy keeps running.
+IMAGE_TAG=<git-sha> docker compose pull
+IMAGE_TAG=<git-sha> docker compose up -d
 
 
-Forward webhooks to your local server:
+Rollback
+--------
+# Re-deploy the previous known-good SHA:
+IMAGE_TAG=<previous-git-sha> docker compose up -d
 
-1) start port 
- stripe listen --forward-to http://localhost:3000/api/stripe-webhook
 
-2) copy webhook seceret to .env
-
-3) Trigger test events
-
-stripe trigger payment_intent.succeeded
-stripe trigger checkout.session.completed
-stripe trigger invoice.paid
+Stop everything
+---------------
+docker compose down

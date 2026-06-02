@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { motionItem } from "@/lib/motion/variants";
-import Separator from "@/components/ui/seperator";
+import Separator from "@/components/ui/separator";
 import getProjects from "@/lib/data/projects";
 import ProjectCard from "@/components/cards/project-card";
 

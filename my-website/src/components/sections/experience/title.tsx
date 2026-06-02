@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Separator from "@/components/ui/seperator";
+import Separator from "@/components/ui/separator";
 import { motionItem } from "@/lib/motion/variants";
 import Pill from "@/components/ui/pill";
 import {
@@ -35,7 +35,7 @@ export default function Title() {
 
       <motion.p variants={motionItem} className="mt-4 max-w-3xl text-pretty text-base text-white/70 md:text-lg">
         A timeline of roles and the kinds of systems I&apos;ve built: enterprise web apps, AWS deployments, payments,
-        automation tooling, and iOS + Bluetooth interfaces.
+        automation tooling, and iOS + Android Bluetooth interfaces.
       </motion.p>
 
       <motion.div variants={motionItem} className="mt-8">

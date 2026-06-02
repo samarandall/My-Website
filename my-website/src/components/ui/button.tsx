@@ -11,6 +11,7 @@ export default function Button({
   size = "md",
   className,
   ariaLabel,
+  onClick,
 }: {
   href: string
   children: React.ReactNode;
@@ -18,6 +19,7 @@ export default function Button({
   size?: "md" | "lg" | "icon";
   className?: string;
   ariaLabel?: string;
+  onClick?: () => void;
 }) {
   const base =
     "inline-flex items-center justify-center gap-2 font-medium transition focus:outline-none focus:ring-2 focus:ring-white/20 disabled:opacity-50";
@@ -41,6 +43,7 @@ export default function Button({
     <SmartLink
       href={href}
       ariaLabel={ariaLabel}
+      onClick={onClick}
       className={cn(base, sizes[size], variants[variant], className)}
     >
       {children}

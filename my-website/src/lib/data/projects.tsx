@@ -1,6 +1,5 @@
 import { Project } from "@/types/types";
 import {
-  ArrowUpRight,
   ExternalLink,
   Github,
 } from "lucide-react";
@@ -8,64 +7,145 @@ import {
 export default function getProjects(): Project[] {
   const projects: Project[] = [
     {
-      slug: "veridical-web",
-      name: "Veridical Website",
-      blurb: "Next.js app deployed on AWS with Stripe payments.",
+      slug: "raid",
+      name: "Raid",
+      blurb:
+        "A deep-space multiplayer FPS in Unreal Engine 5 with a custom procedural terrain toolchain.",
       description:
-        "A production web application with a reusable UI system, payments integration, and performance-minded data flows.",
+        "A \"cowboys in space\" multiplayer first-person shooter built in Unreal Engine 5 with C++ across 18 gameplay modules. A server-authoritative Rust backend (Axum + PostgreSQL) handles auth, inventory, matchmaking and persistence, alongside the Gameplay Ability System and StateTree-driven AI. Includes a custom Python terrain-generation tool that builds 16-bit heightmaps from fBm / ridged-multifractal noise with C++-accelerated thermal & hydraulic erosion, 21 biomes, and SDF / marching-cubes cave meshing — with assets authored in Blender.",
       year: "2025",
-      featured: false,
-      role: "Frontend + Full-stack",
-      stack: ["Next.js", "TypeScript", "React", "Tailwind", "AWS", "Stripe"],
-      tags: ["UI", "Payments", "AWS"],
+      featured: true,
+      role: "Solo Developer — gameplay, tools & backend",
+      stack: [
+        "Unreal Engine 5",
+        "C++",
+        "Blueprints",
+        "Python",
+        "Rust",
+        "PostgreSQL",
+        "Blender",
+      ],
+      tags: ["Unreal Engine 5", "C++", "Procedural Gen", "Multiplayer"],
       metrics: [
-        { label: "Focus", value: "Performance + UX" },
+        { label: "Engine", value: "UE 5.7 · C++" },
+        { label: "Built", value: "Custom terrain generator" },
+      ],
+    },
+    {
+      slug: "veridical-web",
+      name: "Veridical Manufacturing",
+      blurb: "Production e-commerce platform with a hardened Stripe payments stack.",
+      description:
+        "A full-stack manufacturing e-commerce platform built with Next.js 15, React 19 and TypeScript. Server-authoritative catalog, pricing and tax; a Stripe stack using Checkout Sessions, Payment Intents and Stripe Tax with idempotency keys and signature-verified, exactly-once webhooks backed by PostgreSQL de-duplication. Shipped via multi-stage Docker to AWS ECR / EC2 behind Caddy with automatic TLS.",
+      year: "2025",
+      featured: true,
+      role: "Full-stack Engineer",
+      stack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "PostgreSQL",
+        "Stripe",
+        "Docker",
+        "AWS",
+        "Caddy",
+      ],
+      tags: ["Next.js", "Stripe", "AWS"],
+      metrics: [
+        { label: "Focus", value: "Payments + Reliability" },
         { label: "Delivery", value: "Production" },
       ],
       links: [
-        { label: "Live", href: "https://www.veridicalmanufacturing.com", icon: <ExternalLink className="h-4 w-4" /> }
+        {
+          label: "Live",
+          href: "https://www.veridicalmanufacturing.com",
+          icon: <ExternalLink className="h-4 w-4" />,
+        },
       ],
     },
     {
-      slug: "ai-person-detection",
-      name: "Person Detection AI Model",
-      blurb: "A web app using Django, Vue js, and Ultralitics YOLO AI model",
-      year: "2025",
-      description: "A complete web app utilizing Django for the backend web server and video stream processor, Vue js for the frontend, and Ultralitics YOLO model for person detection.",
-      featured: true,
-      role: "AI and Full-Stack Engineer",
-      stack: ["Vue.js", "TypeScript", "React", "Python", "Django", "Ultralitics YOLO"],
-      tags: ["AI Model", "Full-Stack"],
-      links: [
-        { label: "Repo", href: "https://github.com/samarandall/lighthouse-person-detection", icon: <Github className="h-4 w-4" /> }
-      ],
-    },
-    {
-      slug: "my-website",
-      name: "My Website",
-      blurb: "Next Js app deployed on AWS",
+      slug: "veridical-mobile",
+      name: "Veridical Mobile Apps",
+      blurb:
+        "Native iOS & Android BLE controllers for trailer lighting and power-jack hardware.",
       description:
-        "A lightweight automation that aggregates data from multiple locations and produces consistent output for stakeholders.",
+        "Native companion apps on both platforms — SwiftUI (iOS) and Kotlin / Jetpack Compose (Android) — that pair with 6-channel BLE relay hardware over the HC-08 UART profile to control trailer lighting and hydraulic power-jack systems. Includes a checksummed binary command protocol, latching and momentary (press-and-hold) controls, live RSSI display, and Android 12+ runtime permission handling.",
       year: "2025",
       featured: true,
-      role: "Developer",
-      stack: ["TypeScript", "Node.js", "Next.js/React", "AWS"],
-      tags: ["Automation", "Reporting"],
+      role: "Mobile Engineer (iOS + Android)",
+      stack: [
+        "Swift",
+        "SwiftUI",
+        "Kotlin",
+        "Jetpack Compose",
+        "CoreBluetooth",
+        "BLE / GATT",
+      ],
+      tags: ["SwiftUI", "Kotlin", "BLE"],
+      metrics: [
+        { label: "Platforms", value: "iOS + Android" },
+        { label: "Hardware", value: "6-channel BLE relay" },
+      ],
+    },
+    {
+      slug: "lighthouse-person-detection",
+      name: "Lighthouse — Person Detection",
+      blurb: "Real-time person detection streaming YOLOv11 over WebSockets.",
+      description:
+        "A real-time person-detection web app: a FastAPI + OpenCV service ingests webcam / RTSP / video streams, a YOLOv11 model performs detection, and a Django + Channels backend pushes live stats over WebSockets to a Vue 3 / Vuetify frontend. Multi-service, GPU-aware, and containerized with Docker Compose.",
+      year: "2025",
+      featured: true,
+      role: "AI & Full-stack Engineer",
+      stack: [
+        "Python",
+        "Django",
+        "Vue.js",
+        "FastAPI",
+        "OpenCV",
+        "YOLOv11",
+        "WebSocket",
+        "Docker",
+      ],
+      tags: ["YOLOv11", "Django", "Vue"],
       links: [
-        { label: "Repo", href: "https://github.com/samarandall/myWebsite/", icon: <Github className="h-4 w-4" /> }
+        {
+          label: "Repo",
+          href: "https://github.com/samarandall/lighthouse-person-detection",
+          icon: <Github className="h-4 w-4" />,
+        },
       ],
     },
     {
       slug: "hospital-reports",
       name: "Hospital Monitoring Reports",
-      blurb: "Automation tool that generates scheduled reports.",
+      blurb: "Python automation that compiles multi-site data into scheduled reports.",
       description:
-        "A lightweight automation that aggregates data from multiple locations and produces consistent output for stakeholders.",
+        "A Python automation tool that aggregates multi-location hospital temperature data and generates scheduled, audit-ready reports — replacing manual compilation and saving staff hours every week.",
       year: "2025",
-      role: "Developer",
-      stack: ["Python"],
-      tags: ["Automation", "Reporting"],
+      role: "Freelance Developer",
+      stack: ["Python", "Automation"],
+      tags: ["Python", "Automation"],
       featured: false,
+    },
+    {
+      slug: "my-website",
+      name: "This Portfolio",
+      blurb: "The site you're on — Next.js, shipped via Docker to AWS behind Caddy.",
+      description:
+        "This portfolio: a static Next.js (App Router) site with Tailwind CSS and framer-motion, hardened with a strict Content-Security-Policy and security headers, and deployed as a non-root Docker container to AWS (ECR / EC2) behind a Caddy reverse proxy with automatic HTTPS.",
+      year: "2026",
+      role: "Developer",
+      stack: ["Next.js", "TypeScript", "Tailwind", "Docker", "AWS", "Caddy"],
+      tags: ["Next.js", "Docker"],
+      featured: false,
+      links: [
+        {
+          label: "Repo",
+          href: "https://github.com/samarandall/myWebsite/",
+          icon: <Github className="h-4 w-4" />,
+        },
+      ],
     },
   ];
 

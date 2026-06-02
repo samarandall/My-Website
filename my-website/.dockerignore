@@ -1,0 +1,29 @@
+# Dependencies & build output (reinstalled/rebuilt inside the image)
+node_modules
+.next
+out
+build
+
+# Secrets & local env — must never enter the image
+.env
+.env.*
+
+# VCS & tooling
+.git
+.gitignore
+.github
+
+# Editor / OS noise
+.DS_Store
+.vscode
+.idea
+*.log
+npm-debug.log*
+
+# Docs & infra not needed at build time
+README.md
+instructions
+Dockerfile
+.dockerignore
+docker-compose.yml
+Caddyfile

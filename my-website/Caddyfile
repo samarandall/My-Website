@@ -1,3 +1,22 @@
-samarandall.com, www.samarandall.com {
-  reverse_proxy app:3000
+# Static config — the admin API is never needed at runtime.
+{
+	admin off
+}
+
+samarandall.com {
+	encode zstd gzip
+	reverse_proxy app:3000
+
+	header {
+		# HSTS belongs at the TLS terminator. Add `; preload` only once you're
+		# ready to submit to hstspreload.org (it's hard to undo).
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		# Don't leak the proxy software/version.
+		-Server
+	}
+}
+
+# Canonicalize on the apex domain (matches metadataBase / sitemap / robots).
+www.samarandall.com {
+	redir https://samarandall.com{uri} permanent
 }

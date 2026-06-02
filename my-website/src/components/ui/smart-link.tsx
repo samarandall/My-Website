@@ -9,11 +9,13 @@ export default function SmartLink({
   className,
   children,
   ariaLabel,
+  onClick,
 }: {
   href: string;
   className?: string;
   children: React.ReactNode;
   ariaLabel?: string;
+  onClick?: () => void;
 }) {
   // Safety: never throw if href is temporarily empty while you customize.
   if (!href) return <span className={className}>{children}</span>;
@@ -26,8 +28,9 @@ export default function SmartLink({
         href={href}
         className={className}
         aria-label={ariaLabel}
+        onClick={onClick}
         target={isHttp ? "_blank" : undefined}
-        rel={isHttp ? "noreferrer" : undefined}
+        rel={isHttp ? "noopener noreferrer" : undefined}
       >
         {children}
       </a>
@@ -36,7 +39,7 @@ export default function SmartLink({
 
 
   return (
-    <Link href={href} className={className} aria-label={ariaLabel}>
+    <Link href={href} className={className} aria-label={ariaLabel} onClick={onClick}>
       {children}
     </Link>
   );

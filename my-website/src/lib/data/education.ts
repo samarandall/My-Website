@@ -4,7 +4,7 @@ export default function getEducation(): Education {
 
   const education: Education = {
     school: "Texas State University",
-    degree: "Bachelor of Science in Computer Science; Minor in Applied Mathematics",
+    degree: "Bachelor of Science in Computer Science; Minor in Applied Mathematics; Major GPA 4.0",
     location: "San Marcos, TX",
     date: "Dec 2023",
     details: [

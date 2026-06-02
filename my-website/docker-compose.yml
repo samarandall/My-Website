@@ -1,28 +1,35 @@
 services:
   app:
-    image: <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/veridical-manufacturing:latest
-    container_name: veridical-manufacturing
+    # Deploy an immutable, rollback-able tag: IMAGE_TAG=<git-sha> docker compose up -d
+    image: <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website:${IMAGE_TAG:-latest}
+    container_name: my-website
     restart: always
     expose:
       - "3000"
-    env_file:
-      - .env
-    environment:
-      HOST: "0.0.0.0"
-      PORT: "3000"
-      NODE_ENV: "production"
-    # If your image doesn't include curl/wget, remove/adjust this healthcheck
+    # NODE_ENV / PORT / HOSTNAME are baked into the image (see Dockerfile).
     healthcheck:
-      test: [ "CMD-SHELL", "wget -qO- http://localhost:3000/ >/dev/null 2>&1 || exit 1" ]
+      # Use the IPv4 loopback literal: the server binds 0.0.0.0 (IPv4-only) and
+      # busybox wget would otherwise try ::1 first and report the container unhealthy.
+      test: [ "CMD-SHELL", "wget -qO- http://127.0.0.1:3000/ >/dev/null 2>&1 || exit 1" ]
       interval: 30s
       timeout: 5s
       retries: 3
+    # Defense-in-depth: app runs as non-root (Dockerfile) and needs no capabilities.
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 512m
+    pids_limit: 256
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     networks: [ webnet ]
-    # If your image does NOT start Next by itself, uncomment this:
-    # command: ["node","node_modules/next/dist/bin/next","start","-p","3000"]
 
   caddy:
-    image: caddy:2-alpine
+    image: caddy:2-alpine@sha256:86deaf5e3d3408a6ccec08fbb79989783dd26e206ae10bcf78a801dc8c9ab794
     container_name: sam-caddy
     restart: unless-stopped
     ports:
@@ -32,6 +39,14 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data # cert storage (persist for renewals)
       - caddy_config:/config
+    # Caddy binds privileged ports 80/443, so it keeps NET_BIND_SERVICE.
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     depends_on:
       - app
     networks: [ webnet ]

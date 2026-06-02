@@ -9,7 +9,7 @@ export default function getProfileData(
     location: "Texas, USA",
     blurb:
       "I like engineering polished experiences with clean architecture.",
-    highlights: ["Python", "C++", "TypeScript", "Next Js", "Cloud Services", "Systems Design"],
+    highlights: ["TypeScript", "React / Next.js", "Python", "C++", "AWS", "Docker"],
     ...overrides,
     links: {
       ...(overrides?.links ?? {}),

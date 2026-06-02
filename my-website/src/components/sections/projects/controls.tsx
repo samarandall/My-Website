@@ -8,7 +8,7 @@ import {
 
 import { motionItem } from "@/lib/motion/variants";
 import Button from "@/components/ui/button";
-import Separator from "@/components/ui/seperator";
+import Separator from "@/components/ui/separator";
 
 
 export default function Controls() {
