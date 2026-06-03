@@ -20,7 +20,7 @@ export default function getFeatureData() {
     {
       icon: Sparkles,
       title: "Design taste",
-      desc: "Interfaces that feel crisp—motion, typography, and spacing done right.",
+      desc: "Interfaces that feel crisp: motion, typography, and spacing done right.",
       cta: {
         label: "View Projects",
         href: profile.links.projects

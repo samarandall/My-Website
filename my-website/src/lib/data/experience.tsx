@@ -14,10 +14,10 @@ export default function getExperienceData(): Experience[] {
       location: "Austin, TX",
       dates: "Apr 2025 – Present",
       bullets: [
-        "Architected and shipped Veridical's full-stack e-commerce platform — a Next.js 15 / React 19 / TypeScript app with a server-authoritative pricing, tax, and catalog layer so client-submitted data is never trusted.",
+        "Architected and shipped Veridical's full-stack e-commerce platform, a Next.js 15 / React 19 / TypeScript app with a server-authoritative pricing, tax, and catalog layer so client-submitted data is never trusted.",
         "Built the payments stack on Stripe Checkout Sessions and Payment Intents with Stripe Tax, idempotency keys, and signature-verified webhooks processed exactly-once via PostgreSQL event de-duplication.",
         "Designed the PostgreSQL order schema (JSONB line items, indexed payment/shipping status, payment-intent logging) that backs fulfillment and reporting.",
-        "Built native companion apps for both platforms — SwiftUI (iOS) and Kotlin / Jetpack Compose (Android) — that drive 6-channel BLE relay hardware over the HC-08 UART profile to control trailer lighting and hydraulic power-jack systems, using a checksummed binary command protocol with latching and momentary controls.",
+        "Built native companion apps for both platforms, SwiftUI (iOS) and Kotlin / Jetpack Compose (Android), that drive 6-channel BLE relay hardware over the HC-08 UART profile to control trailer lighting and hydraulic power-jack systems, using a checksummed binary command protocol with latching and momentary controls.",
         "Containerized the platform with multi-stage, non-root Docker builds (Next.js standalone output) and shipped it through AWS ECR to EC2 behind a Caddy reverse proxy with automatic TLS, wiring up CI/CD to cut manual deploy time and post-release defects.",
         "Translated stakeholder requirements into maintainable, type-safe features end-to-end with a reusable UI system and React Hook Form + Zod validation.",
       ],

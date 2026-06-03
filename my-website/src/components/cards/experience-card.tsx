@@ -88,7 +88,7 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
         </div>
       </div>
 
-      {/* subtle index marker — decorative ordinal, hidden from AT (also avoids the
+      {/* subtle index marker: decorative ordinal, hidden from AT (also avoids the
           low-contrast white/40 text being flagged as unreadable body text) */}
       <div
         aria-hidden="true"

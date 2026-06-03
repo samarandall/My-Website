@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Static OG/Twitter share card (also used as the Twitter image fallback).
-export const alt = "Sam Randall — Software Engineer";
+export const alt = "Sam Randall, Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

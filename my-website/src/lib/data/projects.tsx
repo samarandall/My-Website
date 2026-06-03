@@ -12,10 +12,10 @@ export default function getProjects(): Project[] {
       blurb:
         "A deep-space multiplayer FPS in Unreal Engine 5 with a custom procedural terrain toolchain.",
       description:
-        "A \"cowboys in space\" multiplayer first-person shooter built in Unreal Engine 5 with C++ across 18 gameplay modules. A server-authoritative Rust backend (Axum + PostgreSQL) handles auth, inventory, matchmaking and persistence, alongside the Gameplay Ability System and StateTree-driven AI. Includes a custom Python terrain-generation tool that builds 16-bit heightmaps from fBm / ridged-multifractal noise with C++-accelerated thermal & hydraulic erosion, 21 biomes, and SDF / marching-cubes cave meshing — with assets authored in Blender.",
+        "A \"cowboys in space\" multiplayer first-person shooter built in Unreal Engine 5 with C++ across 18 gameplay modules. A server-authoritative Rust backend (Axum + PostgreSQL) handles auth, inventory, matchmaking and persistence, alongside the Gameplay Ability System and StateTree-driven AI. Includes a custom Python terrain-generation tool that builds 16-bit heightmaps from fBm / ridged-multifractal noise with C++-accelerated thermal & hydraulic erosion, 21 biomes, and SDF / marching-cubes cave meshing, with assets authored in Blender.",
       year: "2025",
       featured: true,
-      role: "Solo Developer — gameplay, tools & backend",
+      role: "Solo Developer: gameplay, tools & backend",
       stack: [
         "Unreal Engine 5",
         "C++",
@@ -70,7 +70,7 @@ export default function getProjects(): Project[] {
       blurb:
         "Native iOS & Android BLE controllers for trailer lighting and power-jack hardware.",
       description:
-        "Native companion apps on both platforms — SwiftUI (iOS) and Kotlin / Jetpack Compose (Android) — that pair with 6-channel BLE relay hardware over the HC-08 UART profile to control trailer lighting and hydraulic power-jack systems. Includes a checksummed binary command protocol, latching and momentary (press-and-hold) controls, live RSSI display, and Android 12+ runtime permission handling.",
+        "Native companion apps on both platforms, SwiftUI (iOS) and Kotlin / Jetpack Compose (Android), that pair with 6-channel BLE relay hardware over the HC-08 UART profile to control trailer lighting and hydraulic power-jack systems. Includes a checksummed binary command protocol, latching and momentary (press-and-hold) controls, live RSSI display, and Android 12+ runtime permission handling.",
       year: "2025",
       featured: true,
       role: "Mobile Engineer (iOS + Android)",
@@ -90,7 +90,7 @@ export default function getProjects(): Project[] {
     },
     {
       slug: "lighthouse-person-detection",
-      name: "Lighthouse — Person Detection",
+      name: "Lighthouse: Person Detection",
       blurb: "Real-time person detection streaming YOLOv11 over WebSockets.",
       description:
         "A real-time person-detection web app: a FastAPI + OpenCV service ingests webcam / RTSP / video streams, a YOLOv11 model performs detection, and a Django + Channels backend pushes live stats over WebSockets to a Vue 3 / Vuetify frontend. Multi-service, GPU-aware, and containerized with Docker Compose.",
@@ -121,7 +121,7 @@ export default function getProjects(): Project[] {
       name: "Hospital Monitoring Reports",
       blurb: "Python automation that compiles multi-site data into scheduled reports.",
       description:
-        "A Python automation tool that aggregates multi-location hospital temperature data and generates scheduled, audit-ready reports — replacing manual compilation and saving staff hours every week.",
+        "A Python automation tool that aggregates multi-location hospital temperature data and generates scheduled, audit-ready reports, replacing manual compilation and saving staff hours every week.",
       year: "2025",
       role: "Freelance Developer",
       stack: ["Python", "Automation"],
@@ -131,7 +131,7 @@ export default function getProjects(): Project[] {
     {
       slug: "my-website",
       name: "This Portfolio",
-      blurb: "The site you're on — Next.js, shipped via Docker to AWS behind Caddy.",
+      blurb: "The site you're on: Next.js, shipped via Docker to AWS behind Caddy.",
       description:
         "This portfolio: a static Next.js (App Router) site with Tailwind CSS and framer-motion, hardened with a strict Content-Security-Policy and security headers, and deployed as a non-root Docker container to AWS (ECR / EC2) behind a Caddy reverse proxy with automatic HTTPS.",
       year: "2026",

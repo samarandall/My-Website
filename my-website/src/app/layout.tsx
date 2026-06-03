@@ -18,7 +18,7 @@ const siteUrl = "https://samarandall.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sam Randall — Software Engineer",
+    default: "Sam Randall, Software Engineer",
     template: "%s · Sam Randall",
   },
   description:
@@ -56,7 +56,7 @@ export const viewport: Viewport = {
   themeColor: "#09090b",
 };
 
-// schema.org Person — helps search engines build a knowledge-graph entity for Sam.
+// schema.org Person: helps search engines build a knowledge-graph entity for Sam.
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
