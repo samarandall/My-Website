@@ -1,12 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   CheckCircle2,
   GraduationCap,
   Settings,
 } from "lucide-react";
-import { motionItem } from "@/lib/motion/variants";
 import getEducation from "@/lib/data/education";
 import getSkills from "@/lib/data/skills";
 
@@ -17,9 +15,8 @@ export default function Education() {
 
   return (
     <div className="mt-10 grid gap-4 md:grid-cols-2">
-      <motion.div
-        variants={motionItem}
-        className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur"
+      <div
+        className="reveal relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur"
       >
         <div className="flex items-center gap-2">
           <div className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-white/80">
@@ -48,11 +45,10 @@ export default function Education() {
             </ul>
           ) : null}
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={motionItem}
-        className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur"
+      <div
+        className="reveal relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur"
       >
         <div className="flex items-center gap-2">
           <div className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-white/80">
@@ -80,7 +76,7 @@ export default function Education() {
             Clean UI, reliable backend, careful error handling, and performance-minded data flows.
           </p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

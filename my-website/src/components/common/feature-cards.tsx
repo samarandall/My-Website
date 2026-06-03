@@ -1,7 +1,5 @@
 "use client";
 
-import { motionContainer, motionItem } from "@/lib/motion/variants";
-import { motion } from "framer-motion";
 import Button from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Card from "@/components/ui/card";
@@ -10,17 +8,14 @@ import { FeatureCardModel } from "@/types/types";
 
 export default function FeatureCards({ cards }: { cards: FeatureCardModel[] }) {
   return (
-    <motion.div
-      variants={motionContainer}
-      initial="hidden"
-      animate="show"
+    <div
       className="mt-10 grid gap-4 md:grid-cols-3"
     >
       {cards.map((c) => {
         const Icon = c.icon;
 
         return (
-          <motion.div key={c.title} variants={motionItem}>
+          <div key={c.title} className="reveal">
             <Card>
               <CardContent>
                 <div className="flex items-center gap-3">
@@ -41,10 +36,10 @@ export default function FeatureCards({ cards }: { cards: FeatureCardModel[] }) {
                 </Button>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         );
       })}
-    </motion.div>
+    </div>
   );
 }
 

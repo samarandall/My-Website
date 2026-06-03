@@ -1,8 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Project } from "@/types/types";
-import { motionItem } from "@/lib/motion/variants";
 import Card from "@/components/ui/card";
 import CardContent from "@/components/ui/card-content";
 import Badge from "@/components/ui/badge";
@@ -15,7 +13,7 @@ export default function FeaturedProjects({ projects }: { projects: Project[] }) 
       {projects
         .filter((p) => p?.featured)
         .map((p) => (
-          <motion.div key={p.name} variants={motionItem}>
+          <div key={p.name} className="reveal">
             <Card className="group transition hover:bg-white/[0.06]">
               <CardContent>
                 <div className="flex items-start justify-between gap-4">
@@ -56,7 +54,7 @@ export default function FeaturedProjects({ projects }: { projects: Project[] }) 
                 ) : null}
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         ))}
     </div>
   );

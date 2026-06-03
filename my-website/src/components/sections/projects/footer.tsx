@@ -1,13 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Code2,
   Layers,
 } from "lucide-react";
 
-import { motionItem } from "@/lib/motion/variants";
 import Button from "@/components/ui/button";
 import Pill from "@/components/ui/pill";
 interface Props {
@@ -21,7 +19,7 @@ export default function Footer({
 }: Props) {
   return (
     <>
-      <motion.div variants={motionItem} className="mt-8 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-3 reveal">
         <div className="flex flex-wrap items-center gap-2">
           <Pill>
             <Layers className="h-3.5 w-3.5 text-white/70" />
@@ -40,7 +38,7 @@ export default function Footer({
             </Button>
           ) : null}
         </div>
-      </motion.div>
+      </div>
     </>
 
   )

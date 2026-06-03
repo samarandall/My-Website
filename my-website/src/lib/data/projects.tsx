@@ -133,7 +133,7 @@ export default function getProjects(): Project[] {
       name: "This Portfolio",
       blurb: "The site you're on: Next.js, shipped via Docker to AWS behind Caddy.",
       description:
-        "This portfolio: a static Next.js (App Router) site with Tailwind CSS and framer-motion, hardened with a strict Content-Security-Policy and security headers, and deployed as a non-root Docker container to AWS (ECR / EC2) behind a Caddy reverse proxy with automatic HTTPS.",
+        "This portfolio: a static Next.js (App Router) site with Tailwind CSS, hardened with a strict Content-Security-Policy and security headers, and deployed as a non-root Docker container to AWS (ECR / EC2) behind a Caddy reverse proxy with automatic HTTPS.",
       year: "2026",
       role: "Developer",
       stack: ["Next.js", "TypeScript", "Tailwind", "Docker", "AWS", "Caddy"],

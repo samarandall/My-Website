@@ -1,9 +1,7 @@
 "use client";
 
 import Separator from "@/components/ui/separator";
-import { motion } from "framer-motion";
 import ExperienceCard from "@/components/cards/experience-card";
-import { motionItem } from "@/lib/motion/variants";
 import getExperienceData from "@/lib/data/experience";
 
 
@@ -19,9 +17,9 @@ export default function Timeline() {
         }
       </div >
 
-      <motion.div variants={motionItem} className="mt-10">
+      <div className="mt-10 reveal">
         <Separator />
-      </motion.div>
+      </div>
     </>
   );
 }

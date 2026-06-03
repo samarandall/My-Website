@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Github,
@@ -8,7 +7,6 @@ import {
   Zap,
 } from "lucide-react";
 
-import { motionItem } from "@/lib/motion/variants";
 import Button from "@/components/ui/button";
 import Pill from "@/components/ui/pill";
 
@@ -26,7 +24,7 @@ export default function Header({
   links
 }: Props) {
   return (
-    <>    <motion.div variants={motionItem} className="flex flex-wrap items-center justify-between gap-3">
+    <>    <div className="flex flex-wrap items-center justify-between gap-3 reveal">
       <div className="flex flex-wrap items-center gap-2">
         <Pill>
           <Sparkles className="h-3.5 w-3.5 text-white/70" />
@@ -50,22 +48,21 @@ export default function Header({
           </Button>
         ) : null}
       </div>
-    </motion.div>
+    </div>
 
-      <motion.h1
-        variants={motionItem}
-        className="mt-6 text-balance text-3xl font-semibold tracking-tight md:text-5xl"
+      <h1
+        className="mt-6 text-balance text-3xl font-semibold tracking-tight md:text-5xl reveal"
       >
         Built for speed,
         <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-200 to-cyan-200 bg-clip-text text-transparent">
           {" "}designed for clarity
         </span>
         .
-      </motion.h1>
+      </h1>
 
-      <motion.p variants={motionItem} className="mt-4 max-w-3xl text-pretty text-base text-white/70 md:text-lg">
+      <p className="mt-4 max-w-3xl text-pretty text-base text-white/70 md:text-lg reveal">
         {subtitle}
-      </motion.p>
+      </p>
     </>
 
   );

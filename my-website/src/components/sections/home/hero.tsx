@@ -1,7 +1,5 @@
 "use client";
 
-import { motionContainer, motionItem } from "@/lib/motion/variants";
-import { motion } from "framer-motion";
 import Button from "@/components/ui/button";
 import {
   ArrowRight,
@@ -22,10 +20,7 @@ export default function Hero({ profile, featureCards }: { profile: Profile; feat
   const links = profile.links;
 
   return (
-    <motion.section
-      variants={motionContainer}
-      initial="hidden"
-      animate="show"
+    <section
       className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur md:p-10"
     >
       <div className="absolute inset-0 -z-10">
@@ -34,7 +29,7 @@ export default function Hero({ profile, featureCards }: { profile: Profile; feat
       </div>
 
 
-      <motion.div variants={motionItem} className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2 reveal">
         <Pill>
           <Sparkles className="h-3.5 w-3.5 text-white/70" />
           <span>Now building: Unreal tooling + clean web UI</span>
@@ -43,30 +38,30 @@ export default function Hero({ profile, featureCards }: { profile: Profile; feat
           <MapPin className="h-3.5 w-3.5 text-white/70" />
           <span>{profile.location}</span>
         </Pill>
-      </motion.div>
+      </div>
 
 
-      <motion.h1 variants={motionItem} className="mt-6 text-balance text-4xl font-semibold tracking-tight md:text-6xl">
+      <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight md:text-6xl reveal">
         I build{" "}
         <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-200 to-cyan-200 bg-clip-text text-transparent">fast</span>,
         <br className="hidden md:block" />
         reliable software.
-      </motion.h1>
+      </h1>
 
 
-      <motion.p variants={motionItem} className="mt-5 max-w-2xl text-pretty text-base text-white/70 md:text-lg">
+      <p className="mt-5 max-w-2xl text-pretty text-base text-white/70 md:text-lg reveal">
         {profile.blurb}
-      </motion.p>
+      </p>
 
 
-      <motion.div variants={motionItem} className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2 reveal">
         {(profile.highlights ?? []).map((h) => (
           <Badge key={h}>{h}</Badge>
         ))}
-      </motion.div>
+      </div>
 
 
-      <motion.div variants={motionItem} className="mt-8 flex flex-wrap items-center gap-3">
+      <div className="mt-8 flex flex-wrap items-center gap-3 reveal">
         <Button href={links.projects} variant="primary" size="lg" className="rounded-2xl">
           Explore projects <ArrowRight className="h-4 w-4" />
         </Button>
@@ -86,15 +81,15 @@ export default function Hero({ profile, featureCards }: { profile: Profile; feat
             <Mail className="h-5 w-5" />
           </Button>
         </div>
-      </motion.div>
+      </div>
 
 
-      <motion.div variants={motionItem} className="mt-10">
+      <div className="mt-10 reveal">
         <Separator />
-      </motion.div>
+      </div>
 
 
       <FeatureCards cards={featureCards} />
-    </motion.section>
+    </section>
   );
 }

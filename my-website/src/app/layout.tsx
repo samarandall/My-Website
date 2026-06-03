@@ -80,12 +80,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Without JS, framer-motion never runs its entrance animation, so the
-            content would stay at its initial hidden state (opacity:0, blurred,
-            translated down 14px). Force it to its final resting state. */}
-        <noscript>
-          <style>{`*{opacity:1!important;filter:none!important;transform:none!important}`}</style>
-        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

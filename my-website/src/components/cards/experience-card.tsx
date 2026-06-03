@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   CheckCircle2,
   MapPin,
 } from "lucide-react";
-import { motionItem } from "@/lib/motion/variants";
 import Pill from "@/components/ui/pill";
 import { Experience } from "@/types/types";
 import { Calendar } from "lucide-react";
@@ -23,11 +21,11 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
     return v.filter(Boolean).join(" ");
   }
   return (
-    <motion.div
-      variants={motionItem}
+    <div
       className={classNames(
         "group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur",
-        ring
+        ring,
+        "reveal"
       )}
     >
       {/* glow */}
@@ -96,7 +94,7 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
       >
         {String(index + 1).padStart(2, "0")}
       </div>
-    </motion.div>
+    </div>
   );
 }
 

@@ -1,21 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Project } from "@/types/types";
-import { motionItem, motionContainer } from "@/lib/motion/variants";
 import Button from "@/components/ui/button"
 import FeaturedProjects from "@/components/common/featured-projects";
 
 export default function FeaturedWork({ projects, projectsHref }: { projects: Project[]; projectsHref: string; }) {
   return (
-    <motion.section
-      variants={motionContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-100px" }}
+    <section
       className="mt-10"
     >
-      <motion.div variants={motionItem} className="flex items-end justify-between gap-4">
+      <div className="flex items-end justify-between gap-4 reveal">
         <div>
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Featured work</h2>
           <p className="mt-2 max-w-2xl text-sm text-white/70">A couple things I’m proud of.</p>
@@ -25,10 +19,10 @@ export default function FeaturedWork({ projects, projectsHref }: { projects: Pro
             View all
           </Button>
         </div>
-      </motion.div>
+      </div>
 
 
       <FeaturedProjects projects={projects} />
-    </motion.section>
+    </section>
   );
 }
