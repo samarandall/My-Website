@@ -1,4 +1,4 @@
-Contact: mailto:samarandall@proton.me
+Contact: mailto:samrandall100@gmail.com
 Expires: 2027-06-02T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://samarandall.com/.well-known/security.txt

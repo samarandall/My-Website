@@ -13,7 +13,7 @@ export default function getProfileData(
     ...overrides,
     links: {
       ...(overrides?.links ?? {}),
-      email: overrides?.links?.email ?? "mailto:samarandall@proton.me",
+      email: overrides?.links?.email ?? "mailto:samrandall100@gmail.com",
       github: overrides?.links?.github ?? "https://github.com/samarandall",
       linkedin: overrides?.links?.linkedin ?? "https://www.linkedin.com/in/sam-randall",
       resume: overrides?.links?.resume ?? "/Resume.pdf",
