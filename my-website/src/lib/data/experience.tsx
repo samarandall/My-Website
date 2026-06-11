@@ -3,6 +3,7 @@ import {
   Activity,
   Briefcase,
   Building2,
+  Car,
   Rocket,
 } from "lucide-react";
 
@@ -19,6 +20,7 @@ export default function getExperienceData(): Experience[] {
         "Designed the PostgreSQL order schema (JSONB line items, indexed payment/shipping status, payment-intent logging) that backs fulfillment and reporting.",
         "Built native companion apps for both platforms, SwiftUI (iOS) and Kotlin / Jetpack Compose (Android), that drive 6-channel BLE relay hardware over the HC-08 UART profile to control trailer lighting and hydraulic power-jack systems, using a checksummed binary command protocol with latching and momentary controls.",
         "Containerized the platform with multi-stage, non-root Docker builds (Next.js standalone output) and shipped it through AWS ECR to EC2 behind a Caddy reverse proxy with automatic TLS, wiring up CI/CD to cut manual deploy time and post-release defects.",
+        "Redesigned the storefront around a shared design system of reusable UI primitives and shipped full technical SEO: per-page metadata, Open Graph / Twitter cards, JSON-LD structured data, canonical URLs, and generated sitemaps.",
         "Translated stakeholder requirements into maintainable, type-safe features end-to-end with a reusable UI system and React Hook Form + Zod validation.",
       ],
       tags: [
@@ -38,6 +40,29 @@ export default function getExperienceData(): Experience[] {
       ],
       icon: <Rocket className="h-4 w-4" />,
       emphasis: "primary",
+    },
+    {
+      role: "Software Engineer (Freelance)",
+      company: "Honest & Reliable Motors",
+      location: "Liberty Hill, TX",
+      dates: "Jun 2026",
+      bullets: [
+        "Built and launched honestandreliablemotors.com, a marketing and lead-generation platform for a Texas used-car dealership: Next.js 16 (App Router), React 19, TypeScript, and Tailwind v4.",
+        "Implemented runtime-editable inventory and lead capture on SQLite (better-sqlite3) with Litestream streaming replication to S3 for point-in-time restore and disaster recovery.",
+        "Built a custom admin panel secured with HMAC-signed cookie sessions: inventory CRUD plus an integrated email inbox where inbound mail (SES → S3) is parsed and indexed into SQLite, with reply and compose.",
+        "Deployed as a hardened Docker container behind Caddy with automatic TLS on EC2, provisioned with least-privilege IAM policies and a documented deploy runbook.",
+      ],
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "SQLite",
+        "Litestream",
+        "AWS SES",
+        "Docker",
+        "Caddy",
+      ],
+      icon: <Car className="h-4 w-4" />,
     },
     {
       role: "Software Engineer (Freelance)",

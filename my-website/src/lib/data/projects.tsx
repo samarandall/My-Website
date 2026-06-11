@@ -36,8 +36,8 @@ export default function getProjects(): Project[] {
       name: "Veridical Manufacturing",
       blurb: "Production e-commerce platform with a hardened Stripe payments stack.",
       description:
-        "A full-stack manufacturing e-commerce platform built with Next.js 15, React 19 and TypeScript. Server-authoritative catalog, pricing and tax; a Stripe stack using Checkout Sessions, Payment Intents and Stripe Tax with idempotency keys and signature-verified, exactly-once webhooks backed by PostgreSQL de-duplication. Shipped via multi-stage Docker to AWS ECR / EC2 behind Caddy with automatic TLS.",
-      year: "2025",
+        "A full-stack manufacturing e-commerce platform built with Next.js 15, React 19 and TypeScript. Server-authoritative catalog, pricing and tax; a Stripe checkout hardened for production with idempotency keys, Stripe Tax, and cart-aware shipping rates. Redesigned around a shared design system of reusable UI primitives, with full technical SEO: per-page metadata, Open Graph / Twitter cards, JSON-LD structured data, canonical URLs and generated sitemaps. Shipped via a check-gated deploy pipeline (types, lint, build) and multi-stage Docker to AWS ECR / EC2 behind Caddy with automatic TLS.",
+      year: "2025 – 2026",
       featured: true,
       role: "Full-stack Engineer",
       stack: [
@@ -45,7 +45,6 @@ export default function getProjects(): Project[] {
         "React",
         "TypeScript",
         "Tailwind",
-        "PostgreSQL",
         "Stripe",
         "Docker",
         "AWS",
@@ -60,6 +59,41 @@ export default function getProjects(): Project[] {
         {
           label: "Live",
           href: "https://www.veridicalmanufacturing.com",
+          icon: <ExternalLink className="h-4 w-4" />,
+        },
+      ],
+    },
+    {
+      slug: "dealership-web",
+      name: "Honest & Reliable Motors",
+      blurb:
+        "Marketing + lead-gen platform for a Texas used-car dealership, with a custom admin panel and email inbox.",
+      description:
+        "A production marketing and lead-generation website for Honest & Reliable Motors, a Texas used-car dealership built around a vehicle-finder service. Next.js 16 (App Router), React 19, TypeScript and Tailwind v4, backed by SQLite (better-sqlite3) with Litestream streaming replication to S3 for point-in-time restore. Includes runtime-editable inventory, lead-capture forms, and a custom admin panel with HMAC-signed cookie sessions — inventory CRUD plus an integrated email inbox where inbound mail (SES → S3) is parsed and indexed into SQLite, with reply and compose. Deployed as a hardened Docker container behind Caddy with automatic TLS on EC2, using least-privilege IAM policies and a documented deploy runbook.",
+      year: "2026",
+      featured: true,
+      role: "Full-stack Engineer (Freelance)",
+      stack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "SQLite",
+        "Litestream",
+        "AWS SES",
+        "Docker",
+        "AWS",
+        "Caddy",
+      ],
+      tags: ["Next.js", "SQLite", "AWS"],
+      metrics: [
+        { label: "Focus", value: "Lead-gen + Admin tooling" },
+        { label: "Delivery", value: "Production" },
+      ],
+      links: [
+        {
+          label: "Live",
+          href: "https://honestandreliablemotors.com",
           icon: <ExternalLink className="h-4 w-4" />,
         },
       ],
