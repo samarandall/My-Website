@@ -23,11 +23,17 @@ ENV NODE_ENV=production \
     PORT=3000 \
     HOSTNAME=0.0.0.0
 
-# The standalone server runs `node server.js` and never uses npm/yarn/corepack.
-# Remove the base image's bundled package managers so their build-time-only
-# transitive CVEs (npm's tar/minimatch/cross-spawn/glob) don't ride along in the
-# runtime image and trip image scanners. Done as root, before dropping to `node`.
-RUN rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx \
+# The base image is digest-pinned, so its Alpine packages are frozen at the
+# snapshot's versions. Upgrade them to the latest fixed builds from the live
+# Alpine v3.23 repos so newly-disclosed OS/library CVEs (e.g. OpenSSL's
+# libcrypto3/libssl3 advisories) get the patched packages without unpinning.
+#
+# The standalone server runs `node server.js` and never uses npm/yarn/corepack,
+# so also remove the base image's bundled package managers — their build-time-
+# only transitive CVEs (npm's tar/minimatch/cross-spawn/glob) shouldn't ride
+# along in the runtime image and trip scanners. Done as root, before `node`.
+RUN apk upgrade --no-cache \
+ && rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx \
            /usr/local/lib/node_modules/corepack /usr/local/bin/corepack \
            /opt/yarn-* /usr/local/bin/yarn /usr/local/bin/yarnpkg
 
