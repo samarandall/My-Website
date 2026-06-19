@@ -151,18 +151,6 @@ export default function getProjects(): Project[] {
       ],
     },
     {
-      slug: "hospital-reports",
-      name: "Hospital Monitoring Reports",
-      blurb: "Python automation that compiles multi-site data into scheduled reports.",
-      description:
-        "A Python automation tool that aggregates multi-location hospital temperature data and generates scheduled, audit-ready reports, replacing manual compilation and saving staff hours every week.",
-      year: "2025",
-      role: "Freelance Developer",
-      stack: ["Python", "Automation"],
-      tags: ["Python", "Automation"],
-      featured: false,
-    },
-    {
       slug: "my-website",
       name: "This Portfolio",
       blurb: "The site you're on: Next.js, shipped via Docker to AWS behind Caddy.",

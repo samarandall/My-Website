@@ -1,6 +1,5 @@
 import { Experience } from "@/types/types"
 import {
-  Activity,
   Briefcase,
   Building2,
   Car,
@@ -63,18 +62,6 @@ export default function getExperienceData(): Experience[] {
         "Caddy",
       ],
       icon: <Car className="h-4 w-4" />,
-    },
-    {
-      role: "Software Engineer (Freelance)",
-      company: "Monitoring & Report Generator",
-      location: "Remote",
-      dates: "May 2025 – Jun 2025",
-      bullets: [
-        "Built a Python automation tool that aggregates multi-location hospital temperature data and generates scheduled reports, eliminating manual data compilation and saving staff hours every week.",
-        "Designed the pipeline for unattended, scheduled runs that produce consistent, audit-ready output for stakeholders.",
-      ],
-      tags: ["Python", "Automation", "Reporting"],
-      icon: <Activity className="h-4 w-4" />,
     },
     {
       role: "Software Engineer",
