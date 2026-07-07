@@ -141,11 +141,15 @@
    simply fades/slides into its normal state. Because this is pure CSS, content
    is never stuck hidden if JavaScript is blocked or fails — and reduced-motion
    users (or anyone with CSS animations off) just see the content immediately. */
+/* No `filter` here: an ancestor animating `filter` while a descendant (e.g. a
+   backdrop-blur card) uses `backdrop-filter` is a known Firefox compositor bug
+   — the backdrop is sampled incorrectly for the animation's duration, causing
+   a visible glitch on first load. Fine everywhere else, but noticeable on the
+   projects grid where each card wraps a backdrop-blur ProjectCard. */
 @keyframes reveal {
   from {
     opacity: 0;
     transform: translateY(8px);
-    filter: blur(4px);
   }
 }
 .reveal {
