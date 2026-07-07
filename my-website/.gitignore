@@ -33,12 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# deploy/ is ignored by default (anything dropped in here — keys, exports,
-# real configs — stays untracked); only these known-safe files are allow-listed.
-/deploy/*
-!/deploy/deploy.sh
-!/deploy/allow-ssh-ip.sh
-!/deploy/deploy.env.example
+# deploy/ is entirely untracked — deploy.sh, allow-ssh-ip.sh, deploy.env.example,
+# and deploy.env all live locally only, never committed.
+/deploy/
 
 # vercel
 .vercel
