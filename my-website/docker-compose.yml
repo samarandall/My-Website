@@ -1,7 +1,8 @@
 services:
   app:
+    # ECR_REPO is written to a .env alongside this file by deploy.sh (not committed).
     # Deploy an immutable, rollback-able tag: IMAGE_TAG=<git-sha> docker compose up -d
-    image: <your-account-id>.dkr.ecr.us-east-1.amazonaws.com/my-website:${IMAGE_TAG:-latest}
+    image: ${ECR_REPO}:${IMAGE_TAG:-latest}
     container_name: my-website
     restart: always
     expose:
