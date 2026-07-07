@@ -33,8 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# deploy secrets (server host + key path); the .example template IS committed
-/deploy/deploy.env
+# deploy/ is ignored by default (anything dropped in here — keys, exports,
+# real configs — stays untracked); only these known-safe files are allow-listed.
+/deploy/*
+!/deploy/deploy.sh
+!/deploy/allow-ssh-ip.sh
+!/deploy/deploy.env.example
 
 # vercel
 .vercel
