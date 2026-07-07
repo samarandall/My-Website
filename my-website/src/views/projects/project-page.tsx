@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/components/sections/projects/header";
 import Projects from "@/components/sections/projects/projects";
 import Footer from "@/components/sections/projects/footer";

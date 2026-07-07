@@ -1,5 +1,3 @@
-"use client";
-
 import SmartLink from "@/components/ui/smart-link";
 import { Profile } from "@/types/types";
 

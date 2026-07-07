@@ -1,5 +1,3 @@
-"use client";
-
 import cn from "@/lib/utils/cn";
 
 export default function Separator({ className }: { className?: string }) {

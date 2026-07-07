@@ -1,5 +1,3 @@
-"use client";
-
 import { Project } from "@/types/types";
 import Button from "@/components/ui/button"
 import FeaturedProjects from "@/components/common/featured-projects";

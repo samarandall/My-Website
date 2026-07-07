@@ -1,5 +1,3 @@
-"use client";
-
 import Timeline from "@/components/sections/experience/timeline";
 import Footer from "@/components/sections/experience/footer";
 import Education from "@/components/sections/experience/education";

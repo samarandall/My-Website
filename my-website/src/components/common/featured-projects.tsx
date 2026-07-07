@@ -1,5 +1,3 @@
-"use client";
-
 import { Project } from "@/types/types";
 import Card from "@/components/ui/card";
 import CardContent from "@/components/ui/card-content";

@@ -1,4 +1,3 @@
-"use client";
 import SiteFooter from '@/components/common/site-footer';
 import SiteHeader from '@/components/common/site-header';
 import GlowGrid from '@/components/ui/glow-grid';

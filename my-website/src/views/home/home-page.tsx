@@ -1,5 +1,3 @@
-"use client";
-
 import Hero from "@/components/sections/home/hero";
 import FeaturedWork from "@/components/sections/home/featured-work";
 import CallToAction from "@/components/sections/home/cta";

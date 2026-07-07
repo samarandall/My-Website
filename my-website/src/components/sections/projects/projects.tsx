@@ -1,5 +1,3 @@
-"use client";
-
 import Separator from "@/components/ui/separator";
 import getProjects from "@/lib/data/projects";
 import ProjectCard from "@/components/cards/project-card";

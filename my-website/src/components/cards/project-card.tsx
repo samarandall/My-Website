@@ -9,12 +9,7 @@ import {
 } from "lucide-react";
 import Pill from "@/components/ui/pill";
 import Button from "@/components/ui/button";
-
-
-
-function classNames(...v: Array<string | false | null | undefined>) {
-  return v.filter(Boolean).join(" ");
-}
+import cn from "@/lib/utils/cn";
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
@@ -29,18 +24,11 @@ function Metric({ label, value }: { label: string; value: string }) {
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div
-      className={classNames(
+      className={cn(
         "group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur",
         project.featured && "ring-1 ring-white/10"
       )}
     >
-      {/* this glow grid was too much       
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute right-[-120px] top-[-120px] h-[260px] w-[260px] rounded-full bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 blur-3xl" />
-        <div className="absolute bottom-[-140px] left-[-140px] h-[320px] w-[320px] rounded-full bg-gradient-to-br from-fuchsia-400/20 to-amber-300/10 blur-3xl" />
-      </div>
-      */}
-
       <div className="flex flex-col items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">

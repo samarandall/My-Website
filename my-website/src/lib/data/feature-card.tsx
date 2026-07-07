@@ -1,5 +1,3 @@
-"use client";
-
 import { FeatureCardModel, Profile } from "@/types/types";
 import { Sparkles, Code2, Rocket } from "lucide-react";
 import getProfileData from "./profile";

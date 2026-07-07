@@ -1,5 +1,3 @@
-"use client";
-
 import {
   CheckCircle2,
   MapPin,
@@ -7,7 +5,7 @@ import {
 import Pill from "@/components/ui/pill";
 import { Experience } from "@/types/types";
 import { Calendar } from "lucide-react";
-
+import cn from "@/lib/utils/cn";
 
 export default function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
   const ring =
@@ -17,12 +15,9 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
         ? "ring-1 ring-white/8"
         : "ring-1 ring-white/8";
 
-  function classNames(...v: Array<string | false | null | undefined>) {
-    return v.filter(Boolean).join(" ");
-  }
   return (
     <div
-      className={classNames(
+      className={cn(
         "group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur",
         ring,
         "reveal"
@@ -31,7 +26,7 @@ export default function ExperienceCard({ exp, index }: { exp: Experience; index:
       {/* glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div
-          className={classNames(
+          className={cn(
             "absolute right-[-120px] top-[-120px] h-[260px] w-[260px] rounded-full blur-3xl",
             "bg-gradient-to-br from-fuchsia-400/15 to-amber-300/10"
           )}

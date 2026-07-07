@@ -1,5 +1,3 @@
-"use client";
-
 import Separator from "@/components/ui/separator";
 import ExperienceCard from "@/components/cards/experience-card";
 import getExperienceData from "@/lib/data/experience";
