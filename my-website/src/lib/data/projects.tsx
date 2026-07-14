@@ -164,7 +164,7 @@ export default function getProjects(): Project[] {
       links: [
         {
           label: "Repo",
-          href: "https://github.com/samarandall/my-website",
+          href: "https://github.com/samarandall/My-Website",
           icon: <Github className="h-4 w-4" />,
         },
       ],
