@@ -161,7 +161,7 @@ echo "    (re)starting services..."
 docker compose up -d
 echo "    waiting for the app container to report healthy..."
 healthy=false
-for _ in $(seq 1 30); do
+for _ in $(seq 1 90); do
   status="$(docker inspect -f '{{ if .State.Health }}{{ .State.Health.Status }}{{ else }}none{{ end }}' my-website 2>/dev/null || echo missing)"
   echo "      health: $status"
   if [ "$status" = "healthy" ]; then healthy=true; break; fi

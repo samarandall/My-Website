@@ -15,6 +15,11 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+      # Without a start period the first probe only fires one full interval (30s)
+      # in, so every deploy waits 30s on a container that serves in about a second.
+      # start_interval polls every 2s until the first success (needs Engine 25.0+).
+      start_period: 30s
+      start_interval: 2s
     # Defense-in-depth: app runs as non-root (Dockerfile) and needs no capabilities.
     security_opt:
       - no-new-privileges:true
