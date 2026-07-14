@@ -124,7 +124,7 @@ export default function getProjects(): Project[] {
     },
     {
       slug: "lighthouse-person-detection",
-      name: "Real-Time-Detection-System",
+      name: "Real-Time Detection System",
       blurb: "Real-time person detection streaming YOLOv11 over WebSockets.",
       description:
         "A real-time person-detection web app: a FastAPI + OpenCV service ingests webcam / RTSP / video streams, a YOLOv11 model performs detection, and a Django + Channels backend pushes live stats over WebSockets to a Vue 3 / Vuetify frontend. Multi-service, GPU-aware, and containerized with Docker Compose.",
