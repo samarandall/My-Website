@@ -20,3 +20,18 @@ samarandall.com {
 www.samarandall.com {
 	redir https://samarandall.com{uri} permanent
 }
+
+# The wedding RSVP app — a separate compose stack in /home/ec2-user/rsvp on this
+# same instance. `rsvp` resolves through Docker's embedded DNS because that
+# stack's deploy.sh attaches this Caddy container to its `rsvpnet` network.
+# Note the apex already sends HSTS with includeSubDomains, so this host must
+# stay on HTTPS regardless.
+rsvp.samarandall.com {
+	encode zstd gzip
+	reverse_proxy rsvp:3000
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+	}
+}
